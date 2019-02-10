@@ -64,7 +64,7 @@ function addCodeLineNumbers() {
         for (var i=1;i<=count; i++) {
             lineNumbers += '<span class="line-number">'+i+'</span>\n';
         }
-        var table = tableStart + lineNumbers + tableMiddle + '<pre>'+$('pre', code).html()+'</pre>' + tableEnd;
+        var table = [tableStart , lineNumbers , tableMiddle , '<pre>'+$('pre', code).html()+'</pre>', tableEnd].join("");
         $(code).html(table);
     });
 }
@@ -141,7 +141,13 @@ $('document').ready(function() {
 
 // Periodically wipe comment ads
 window.setInterval(()=> {
-    const iframes = Array.from(document.querySelectorAll('iframe'));
+    let arFr=null;
+    if(Array.from)
+        arFr = Array.from;
+    else
+        arFr = [].concat;
+
+    const iframes = ar.Fr(document.querySelectorAll('iframe'));
     iframes.forEach(iframe => {
         if (iframe.src.match(/(ads-iframe)|(disqusads)/g)) {
             iframe.classList.add('ad-unit');

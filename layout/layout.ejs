@@ -10,9 +10,6 @@ var thisYear = new Date().getFullYear();
 %>
 
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7" lang="<%=config.language%>"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8" lang="<%=config.language%>"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="<%=config.language%>"><!--<![endif]-->
 <head>
     <meta charset="UTF-8">
     <title><%= pageTitle %></title>
@@ -55,11 +52,13 @@ var thisYear = new Date().getFullYear();
 
     <%- css('css/octo') %>
 
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Raleway" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
           type="text/css">
 
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
-          type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Merriweather+Sans:400,700|Raleway" rel="stylesheet">
+
 
     <% if (theme.stylesheets && theme.stylesheets.length) { %>
         <!-- stylesheets list from config.yml -->
